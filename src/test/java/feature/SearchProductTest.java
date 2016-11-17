@@ -5,6 +5,9 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 /**
  * Created by berkd on 07.11.2016.
@@ -32,6 +35,12 @@ public class SearchProductTest extends BaseTest {
         Assert.assertTrue(driver.findElement(By.id("s-results-list-atf")).findElements(By.tagName("li")).size() -
                           driver.findElements(By.className("s-sponsored-list-header")).size()
                           == numberOfProducts );
+    }
+
+    @Then("^Select first product$")
+    public void selectFirstProduct() {
+        driver.findElement(By.id("s-results-list-atf")).findElements(By.tagName("li")).get(0)
+                                                       .findElement(By.className("s-access-detail-page")).click();
     }
 
 }

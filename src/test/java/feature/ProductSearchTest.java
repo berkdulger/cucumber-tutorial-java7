@@ -7,12 +7,10 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.List;
-
 /**
  * Created by berkd on 07.11.2016.
  */
-public class SearchProductTest extends BaseTest {
+public class ProductSearchTest extends BaseTest {
 
     @Given("^I opened (.*) website$")
     public void openWebSite(String webSite) {
